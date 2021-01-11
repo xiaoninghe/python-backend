@@ -3,7 +3,6 @@ from webapp import app
 from flask import json, request, jsonify
 import tensorflow as tf
 import numpy as np
-import pandas as pd
 
 from webapp.mnist_model import MNIST_Model
 
