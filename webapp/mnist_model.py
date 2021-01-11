@@ -1,4 +1,5 @@
 from os.path import join
+import numpy as np
 import tensorflow as tf
 
 class MNIST_Model:
@@ -7,7 +8,6 @@ class MNIST_Model:
 
     @classmethod
     def predict_digit(cls, X):
-        if X == 3:
-            return 0
-        y = cls.model.predict(X)
-        return y
+        pred = cls.model.predict(X)
+        pred = np.argmax(pred, axis=1)
+        return pred[0]
